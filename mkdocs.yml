@@ -1,0 +1,4 @@
+site_name: Little Lines Documentation
+site_url: https://docs.little-lines.techtransthai.org
+theme:
+  name: readthedocs
