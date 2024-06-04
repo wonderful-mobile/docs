@@ -1,6 +1,6 @@
 FROM docker.io/library/nginx:alpine
 
-RUN apk add git
+RUN apk add git mkdocs
 
 RUN mkdir -p /opt/little-lines-docs
 
