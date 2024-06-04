@@ -1,5 +1,10 @@
 site_name: เอกสาร Little Lines
 site_url: https://little-lines-docs.techtransthai.org
+repo_url: https://forge.techtransthai.org/little-lines/docs
+edit_uri: 'src/branch/main/docs/'
+
+site_description: เอกสารสำหรับ Little Lines
+site_author: TechTransThai Community
 theme:
   name: readthedocs
 nav:
