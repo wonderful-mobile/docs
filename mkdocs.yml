@@ -1,4 +1,8 @@
-site_name: Little Lines Documentation
-site_url: https://docs.little-lines.techtransthai.org
+site_name: เอกสาร Little Lines
+site_url: https://little-lines-docs.techtransthai.org
 theme:
   name: readthedocs
+nav:
+  - ภาพรวมของระบบ: overview.md
+  - การติดตั้ง: installation.md
+  - การเพิ่มข้อมูล: osm-contrib.md
