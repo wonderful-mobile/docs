@@ -1,6 +1,6 @@
 FROM docker.io/library/nginx:alpine
 
-RUN apk add git mkdocs
+RUN apk add git mkdocs py3-pathspec
 
 RUN mkdir -p /opt/little-lines-docs
 
