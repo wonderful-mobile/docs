@@ -1,8 +1,4 @@
-# การเพิ่มข้อมูลให้กับ Little Lines
-
-Little Lines ใช้ข้อมูลจาก OpenStreetMap ในการทำงานโดยตรง นั่นหมายความว่า เมื่อคุณเพิ่มข้อมูลลงไปใน OpenStreetMap ข้อมูลนั้นจะเพิ่มเข้ามาใน Little Lines ด้วย
-
-### วิธีเพิ่มข้อมูลลงใน OpenStreetMap
+# วิธีเพิ่มข้อมูลลงใน OpenStreetMap
 
 #### ผ่านคอมพิวเตอร์ PC
 

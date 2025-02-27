@@ -1,14 +1,12 @@
-site_name: เอกสาร Little Lines
-site_url: https://little-lines-docs.techtransthai.org
-repo_url: https://forge.techtransthai.org/little-lines/docs
+site_name: TechTransThai Docs
+site_url: https://docs.techtransthai.org
+repo_url: https://forge.techtransthai.org/techtransthai/docs.techtransthai.org
 edit_uri: 'src/branch/main/docs/'
 
-site_description: เอกสารสำหรับ Little Lines
+site_description: TechTransThai Docs - our knowledge base for everything
 site_author: TechTransThai Community
 theme:
   name: readthedocs
 nav:
-  - ภาพรวมของระบบ: overview.md
-  - การติดตั้ง: installation.md
-  - การเพิ่มข้อมูล: osm-contrib.md
-  - การสนับสนุน: support.md
+  - หน้าแรก: index.md
+  - การเพิ่มข้อมูลลงใน OpenStreetMap: osm-contrib.md
