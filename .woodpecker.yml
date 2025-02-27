@@ -1,0 +1,8 @@
+steps:
+  - name: techtransthai-simple-deploy
+    image: alpine
+    commands:
+      - apk add mkdocs
+      - mkdocs build -d /mnt/caddy-sites/docs.techtransthai.org/
+    volumes:
+      - /media/core/Data1/Apps/caddy/sites:/mnt/caddy-sites
