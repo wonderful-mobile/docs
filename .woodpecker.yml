@@ -1,5 +1,10 @@
+when:
+  - branch: main
+    event: push
+  - event: tag
+  
 steps:
-  - name: techtransthai-simple-deploy
+  - name: deploy
     image: alpine
     commands:
       - apk add mkdocs
