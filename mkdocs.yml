@@ -8,7 +8,11 @@ site_author: Wonderful Mobile Project
 theme:
   name: readthedocs
 nav:
-  - Wonderful Kernel: wonderful-kernel/index.md
+  - Home: index.md
+  - Wonderful Kernel:
+      - About: wonderful-kernel/index.md
+      - Devices: 
+        - Samsung Galaxy A23 5G: wonderful-kernel/samsung-a23xq.md
 
 markdown_extensions:
   - pymdownx.tilde

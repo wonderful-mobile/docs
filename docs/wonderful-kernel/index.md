@@ -19,7 +19,3 @@ Wonderful Kernels are custom kernels focusing on stability, feature, performance
 - Ensure you flash with a non-Magisk/unrooted boot image (stock boot image).​
 Important Warning​
 - If anyone asks you to make your vendor partition read-writeable, do not trust them!​ Loading untrusted modules can **brick your device**, and making the vendor partition read-writeable can cause issues such as camera/front camera malfunctions.​ Always research thoroughly before making any changes to your system!​
-
-## Supported devices
-
-- [Samsung Galaxy A23 5G (samsung-a23xq)](samsung-a23xq.md)
