@@ -22,4 +22,4 @@ Important Warning​
 
 ## Supported devices
 
-- [Samsung Galaxy A23 5G (samsung-a23xq)](samsung-a23xq)
+- [Samsung Galaxy A23 5G (samsung-a23xq)](samsung-a23xq.md)
