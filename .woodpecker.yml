@@ -1,13 +1,12 @@
 when:
   - branch: main
     event: push
-  - event: tag
   
 steps:
   - name: deploy
     image: alpine
     commands:
-      - apk add mkdocs
-      - mkdocs build -d /mnt/caddy-sites/docs.techtransthai.org/
+      - apk add mkdocs py3-pymdown-extensions
+      - mkdocs build -d /mnt/caddy-sites/wonderful-mobile-docs.techtransthai.org/
     volumes:
-      - /media/core/Data1/Apps/caddy/sites:/mnt/caddy-sites
+      - /home/core/Data1/Apps/caddy/sites:/mnt/caddy-sites

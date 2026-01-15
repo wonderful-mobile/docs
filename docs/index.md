@@ -1,6 +1,9 @@
-# ยินดีต้อนรับสู่เอกสารของ TechTransThai
+# TechTransThai Wonderful Mobile Documentation
 
+Welcome to TechTransThai Wonderful Mobile! This documentation provides essential information and resources for those building or contributing to the Wonderful Mobile project.
 
-TechTransThai เป็นชุมชนสายเทคสำหรับคนข้ามเพศและพันธมิตรในประเทศไทย ที่มีเป้าหมายในการร่วมสร้างอนาคตแห่งซอฟต์แวร์เสรี การกระจายศูนย์ ข้อมูลและมาตรฐานเปิด เอกสารนี้เป็นส่วนหนึ่งในการเผยแพร่ความรู้เพื่อสนับสนุนเป้าหมายของเรา
+## Content Overview
 
-กดที่เมนูด้านซ้ายเพื่อเลือกดูบทความต่าง ๆ
+This documentation is organized into these sections:
+
+- [Wonderful Kernel](wonderful-kernel/index.md): custom kernels that focus on stability, feature and performance.

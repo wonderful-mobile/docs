@@ -1,12 +1,14 @@
-site_name: TechTransThai Docs
-site_url: https://docs.techtransthai.org
-repo_url: https://forge.techtransthai.org/techtransthai/docs.techtransthai.org
+site_name: Wonderful Mobile Docs
+site_url: https://wonderful-mobile-docs.techtransthai.org
+repo_url: https://forge.techtransthai.org/wonderful-mobile/docs
 edit_uri: 'src/branch/main/docs/'
 
-site_description: TechTransThai Docs - our knowledge base for everything
-site_author: TechTransThai Community
+site_description: Wonderful Mobile Documentation
+site_author: Wonderful Mobile Project
 theme:
   name: readthedocs
 nav:
-  - หน้าแรก: index.md
-  - การเพิ่มข้อมูลลงใน OpenStreetMap: osm-contrib.md
+  - Wonderful Kernel: wonderful-kernel/index.md
+
+markdown_extensions:
+  - pymdownx.tilde
