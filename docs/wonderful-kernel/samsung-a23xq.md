@@ -1,6 +1,6 @@
 # Samsung Galaxy A23 5G (samsung-a23xq)
 
-Wonderful Kernel for # Samsung Galaxy A23 5G (samsung-a23xq).
+Wonderful Kernel for Samsung Galaxy A23 5G (samsung-a23xq).
 
 ## Known issues
 
