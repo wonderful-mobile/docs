@@ -2,9 +2,19 @@
 
 Wonderful Kernel for Samsung Galaxy A23 5G (samsung-a23xq).
 
+## Warning
+- **Modifying your device will blow the Knox e-fuse and void your warranty**
+- **The user shall be responsible for any kind of damage to your phone whether soft or hard brick**
+
 ## Known issues
 
 - Found an issue? Let us know in our issue tracker or Telegram group chat!
+
+## Getting the kernel
+
+- [Download from here](https://dl.techtransthai.org/wonderful-mobile/Wonderful-Kernel/a23xq/AOSP/Experiment/Anykernel3-Wonderful-0.7-experiment-aosp-a23xq-b3ebd1f8d-20251031010903-Next.zip), then proceed to [Flashing](#flashing)
+- If you want to build from source, see [Building the kernel](#building-the-kernel)
+
 
 ## Building the kernel
 
