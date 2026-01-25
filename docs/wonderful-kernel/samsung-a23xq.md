@@ -4,8 +4,7 @@ Wonderful Kernel for Samsung Galaxy A23 5G (samsung-a23xq).
 
 ## Known issues
 
-- ~~Android System warning: "Internal problem with your device."~~ (Fixed at v0.5)
-- Found another issue? Let us know in our Telegram group chat!
+- Found an issue? Let us know in our issue tracker or Telegram group chat!
 
 ## Building the kernel
 
