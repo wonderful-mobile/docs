@@ -9,4 +9,4 @@ steps:
       - apk add mkdocs py3-pymdown-extensions
       - mkdocs build -d /mnt/caddy-sites/wonderful-mobile-docs.techtransthai.org/
     volumes:
-      - /home/core/Data1/Apps/caddy/sites:/mnt/caddy-sites
+      - /home/yanagi/caddy-sites:/mnt/caddy-sites
