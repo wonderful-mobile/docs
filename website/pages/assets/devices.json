@@ -5,14 +5,6 @@
       "summary": "Plain Wonderful Kernel. You can still root it later with APatch.",
       "variant": "Vanilla"
     },
-    "ksu": {
-      "name": "KernelSU",
-      "summary": "The original kernel-based root, using a driver made for older (non-GKI) kernels.",
-      "variant": "KernelSU",
-      "logo": "assets/logos/kernelsu.webp",
-      "manager": "https://github.com/backslashxx/KernelSU/releases",
-      "manager_name": "KernelSU manager (backslashxx)"
-    },
     "ksun": {
       "name": "KernelSU-Next",
       "summary": "KernelSU fork with extra module features. A good default.",
@@ -24,11 +16,19 @@
     },
     "sukisu": {
       "name": "SukiSU",
-      "summary": "KernelSU fork with SUSFS support.",
+      "summary": "KernelSU fork with SUSFS built in.",
       "variant": "SukiSU",
       "logo": "assets/logos/sukisu.webp",
       "manager": "https://github.com/SukiSU-Nova/SukiSU-Nova/releases",
       "manager_name": "SukiSU manager"
+    },
+    "bakasu": {
+      "name": "BakaSU",
+      "summary": "KernelSU fork with SUSFS built in. Needs the fewest kernel hooks.",
+      "variant": "BakaSU",
+      "logo": "assets/logos/bakasu.webp",
+      "manager": "https://github.com/Baka-SU/BakaSU/releases",
+      "manager_name": "BakaSU manager"
     }
   },
   "susfs": {
@@ -47,8 +47,18 @@
       "image": "https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp",
       "docs": "wonderful-kernel/samsung-a23xq/",
       "repo": "wonderful-mobile/android_kernel_samsung_a23xq",
-      "roots": ["none", "ksu", "ksun", "sukisu"],
-      "susfs": ["sukisu"]
+      "roots": [
+        "none",
+        "ksun",
+        "sukisu",
+        "bakasu"
+      ],
+      "susfs": [
+        "ksun",
+        "sukisu",
+        "bakasu"
+      ]
     }
-  ]
+  ],
+  "note_no_kernelsu": "Official KernelSU is not offered: it dropped support for non-GKI and GKI 1.0 kernels (Linux older than 5.10)."
 }

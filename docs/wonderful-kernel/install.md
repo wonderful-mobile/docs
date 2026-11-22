@@ -3,9 +3,10 @@
 How to install Wonderful Kernel for the first time. Already have it? See
 [Upgrade](upgrade.md).
 
-> **Read first:** unlocking the bootloader wipes your phone and trips Knox
-> permanently (Samsung Pay, Secure Folder and some banking apps stop working).
-> You are responsible for your device.
+!!! danger "Read first"
+    Unlocking the bootloader wipes your phone and trips Knox permanently
+    (Samsung Pay, Secure Folder and some banking apps stop working). You are
+    responsible for your device.
 
 ## What you need
 
@@ -13,7 +14,9 @@ How to install Wonderful Kernel for the first time. Already have it? See
 - A Windows PC with Odin (Samsung's flashing tool), the
   [Samsung USB driver](https://developer.samsung.com/android-usb-driver), and a
   USB cable.
-- The Wonderful Kernel zip for your phone, from the [download page](download.md).
+- The Wonderful Kernel zip for your phone, from its device page
+  (e.g. [Galaxy A23 5G](samsung-a23xq.md#download)). Not sure which variant?
+  See [Root managers](root-managers.md).
 - Your phone's stock firmware, in case you need to go back. Download the exact
   version you are running (Settings → About phone → Software information →
   Build number) with a tool such as [samfirm.js](https://github.com/jesec/samfirm.js)
@@ -76,13 +79,13 @@ must come from compatible versions, so use the release linked here:
 
 | Variant | Manager app |
 |---|---|
-| KernelSU | [backslashxx/KernelSU releases](https://github.com/backslashxx/KernelSU/releases) |
-| KernelSU-Next | [KernelSU-Next releases](https://github.com/KernelSU-Next/KernelSU-Next/releases) |
+| KernelSU-Next, KernelSU-Next-SUSFS | [KernelSU-Next releases](https://github.com/KernelSU-Next/KernelSU-Next/releases) |
 | SukiSU, SukiSU-SUSFS | [SukiSU releases](https://github.com/SukiSU-Nova/SukiSU-Nova/releases) |
+| BakaSU, BakaSU-SUSFS | [BakaSU releases](https://github.com/Baka-SU/BakaSU/releases) |
 
-For SukiSU-SUSFS, also install the
-[SUSFS module](https://github.com/sidex15/susfs4ksu-module/releases) from the
-SukiSU manager.
+For a SUSFS variant, also install the
+[SUSFS module](https://github.com/sidex15/susfs4ksu-module/releases) from your
+root manager.
 
 ## Check that it worked
 

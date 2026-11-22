@@ -1,13 +1,6 @@
 # Samsung Galaxy A23 5G
 
-<div class="card device-card">
-<img src="https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp" alt="" width="72" height="72">
-<span>
-<h3>Samsung Galaxy A23 5G</h3>
-<p>SM-A236B · a23xq · Snapdragon 695</p>
-<span class="tags"><span class="tag beta">Beta</span></span>
-</span>
-</div>
+![Samsung Galaxy A23 5G](https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp){ width="96" }
 
 | | |
 |---|---|
@@ -22,16 +15,19 @@
 
 ## Download
 
-Use the [download page](download.md), or pick a file from the
-[latest release](https://github.com/wonderful-mobile/android_kernel_samsung_a23xq/releases/latest):
+Pick a file from the
+[latest release](https://github.com/wonderful-mobile/android_kernel_samsung_a23xq/releases/latest).
+Not sure which one? See [Root managers](root-managers.md).
 
 | File | Root manager | SUSFS |
 |---|---|---|
 | `Wonderful-a23xq-Vanilla.zip` | None | No |
-| `Wonderful-a23xq-KernelSU.zip` | KernelSU | No |
 | `Wonderful-a23xq-KernelSU-Next.zip` | KernelSU-Next | No |
+| `Wonderful-a23xq-KernelSU-Next-SUSFS.zip` | KernelSU-Next | Yes |
 | `Wonderful-a23xq-SukiSU.zip` | SukiSU | No |
 | `Wonderful-a23xq-SukiSU-SUSFS.zip` | SukiSU | Yes |
+| `Wonderful-a23xq-BakaSU.zip` | BakaSU | No |
+| `Wonderful-a23xq-BakaSU-SUSFS.zip` | BakaSU | Yes |
 
 Older builds: [dl.techtransthai.org](https://dl.techtransthai.org/wonderful-mobile/Wonderful-Kernel/a23xq/).
 

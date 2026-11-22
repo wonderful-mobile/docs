@@ -3,16 +3,8 @@
 The tools and patches behind Wonderful Kernel. They live in each kernel
 repository, next to the source they build.
 
-<div class="card-grid">
-<a class="card" href="building/">
-<h3>Building the kernel</h3>
-<p>Build Wonderful Kernel yourself with one script. Works on Ubuntu, Debian, and any Linux with Nix.</p>
-</a>
-<a class="card" href="porting/">
-<h3>Porting to your kernel</h3>
-<p>Reuse the build script, root manager hooks and SUSFS port in another kernel.</p>
-</a>
-</div>
+- [Building the kernel](building.md): build Wonderful Kernel yourself with one script. Works on Ubuntu, Debian, and any Linux with Nix.
+- [Porting to your kernel](porting.md): reuse the build script, root manager hooks and SUSFS port in another kernel.
 
 ## What is included
 
@@ -27,10 +19,12 @@ repository, next to the source they build.
 | Patch set | What it does |
 |---|---|
 | `patches/susfs/5.4/` | SUSFS v2.4.0, ported by hand to Samsung's 5.4 kernel |
-| `patches/root/sukisu/` | Kernel hooks SukiSU needs |
-| `patches/root/sukisu-susfs/` | Kernel hooks SukiSU needs when SUSFS is on |
-| `patches/root/ksu/` | Turns off the in-tree hooks for KernelSU, which patches the syscall table itself |
+| `patches/root/sukisu/`, `sukisu-susfs/` | Kernel hooks SukiSU needs, without and with SUSFS |
+| `patches/root/bakasu/`, `bakasu-susfs/` | Kernel hooks BakaSU needs, without and with SUSFS |
 | `patches/driver/sukisu/` | Two fixes so SukiSU v3.0.0 builds on Linux 5.4 |
+
+KernelSU-Next uses the hooks already in the kernel source, with or without
+SUSFS.
 
 Patches are applied only while building and removed afterwards, so the
 kernel source stays clean.

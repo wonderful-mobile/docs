@@ -14,9 +14,10 @@ wonderful/
   anykernel.sh              AnyKernel3 script for this device
   patches/
     susfs/5.4/              SUSFS, ported to this kernel
-    root/ksu/               turns off in-tree hooks for KernelSU
     root/sukisu/            hooks that SukiSU needs
     root/sukisu-susfs/      hooks that SukiSU + SUSFS needs
+    root/bakasu/            hooks that BakaSU needs
+    root/bakasu-susfs/      hooks that BakaSU + SUSFS needs
     driver/sukisu/          fixes applied to the downloaded SukiSU driver
 ```
 
@@ -41,8 +42,10 @@ When building, `build.sh` does this:
 
 | Build | Applied |
 |---|---|
-| `--root ksu` | KernelSU driver, then `patches/root/ksu/` (turns off in-tree hooks) |
-| `--root ksun` | KernelSU-Next driver only (hooks are in the source) |
+| `--root ksun` | KernelSU-Next `legacy` driver only (hooks are in the source) |
+| `--root ksun --susfs` | sidex15 `legacy-susfs-v2` driver, then `patches/susfs/<kernel version>/` |
+| `--root bakasu` | BakaSU driver, then `patches/root/bakasu/` |
+| `--root bakasu --susfs` | BakaSU driver, then `patches/susfs/<kernel version>/`, then `patches/root/bakasu-susfs/` |
 | `--root sukisu` | SukiSU driver, then `patches/root/sukisu/` |
 | `--root sukisu --susfs` | SukiSU driver, then `patches/susfs/<kernel version>/`, then `patches/root/sukisu-susfs/` |
 
@@ -78,6 +81,12 @@ source update, which is much easier than starting over.
 | `newfstat` | `ksu_handle_newfstat_ret` | `ksu_handle_vfs_fstat` | same, static key |
 | `setresuid` | LSM hook | LSM hook | `ksu_handle_setresuid` |
 | Gate flags | `ksu_init_rc_hook`, `ksu_input_hook` | `ksu_vfs_read_hook`, `ksu_input_hook` | `ksu_is_init_rc_hook_enabled` |
+
+BakaSU without SUSFS uses the KernelSU-Next style for `execve`, `faccessat`
+and `stat`, adds `ksu_handle_fstat64_ret`, and handles `read`, input and
+`setresuid` itself. BakaSU with SUSFS uses the SukiSU + SUSFS style, but
+`ksu_su_compat_enabled` and the input gate are static keys. BakaSU checks
+every hook while building and stops with a clear error if one is wrong.
 
 Mixing these up still compiles but crashes on the phone, because the C
 declarations live in different files. Always check hook signatures against the

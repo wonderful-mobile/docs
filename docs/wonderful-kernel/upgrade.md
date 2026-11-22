@@ -15,10 +15,10 @@ your phone's firmware. First time? See [Install](install.md).
 Check which variant you have in Settings → About phone → Software information
 → **Kernel version**, for example `5.4.254-wonderful-0.8-KernelSU-Next`.
 
-## Same variant { #same-variant }
+## Same variant {: #same-variant }
 
-1. Download the new release of the **same variant** from the
-   [download page](download.md).
+1. Download the new release of the **same variant** from your
+   [device page](samsung-a23xq.md#download).
 2. Flash it in TWRP (**Install** → select the zip → swipe), or with
    Kernel Flasher if you flash from the phone.
 3. Reboot.
@@ -27,7 +27,7 @@ Check which variant you have in Settings → About phone → Software informatio
 
 Your apps, data, root settings and modules are kept.
 
-## Change variant { #change-variant }
+## Change variant {: #change-variant }
 
 Root managers keep their own settings and modules, and switching directly
 from one to another can leave the phone half-rooted.
@@ -39,7 +39,7 @@ from one to another can leave the phone half-rooted.
 4. Reboot to TWRP and flash the new variant.
 5. Install the new manager app, then reinstall your modules.
 
-## Update firmware { #update-firmware }
+## Update firmware {: #update-firmware }
 
 Each Wonderful Kernel release is built for a specific firmware version, listed
 on the [device page](samsung-a23xq.md). A firmware update replaces the
@@ -55,7 +55,7 @@ kernel, and often TWRP too.
 Using a kernel built for older firmware on newer firmware can break Wi-Fi,
 the camera or booting.
 
-## Go back to stock { #go-back-to-stock }
+## Go back to stock {: #go-back-to-stock }
 
 Restore your stock boot backup in TWRP, or flash the `boot.img` from your
 stock firmware. To also remove TWRP, flash the stock firmware with Odin

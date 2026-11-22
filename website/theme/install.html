@@ -2,16 +2,17 @@
 
 {% block content %}
 <div class="wizard">
-  {{ page.content }}
+  {{ page.content|replace('href="@docs/', 'href="' ~ config.extra.docs_url) }}
 
   <div id="wizard"
        data-devices="{{ 'assets/devices.json'|url }}"
-       data-docs="{{ ''|url }}"
+       data-base="{{ ''|url }}"
+       data-docs="{{ config.extra.docs_url }}"
        data-logo="{{ config.extra.logo }}">
     <noscript>
       <div class="notice">
         This guide needs JavaScript. Without it, pick your download from the
-        <a href="{{ 'wonderful-kernel/'|url }}">device pages</a>.
+        <a href="{{ config.extra.docs_url }}wonderful-kernel/samsung-a23xq/#download">device page</a>.
       </div>
     </noscript>
   </div>

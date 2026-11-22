@@ -43,8 +43,8 @@ sudo apt install -y bc bison flex git make perl python3 curl zip cpio lz4 libssl
 
 It asks three questions:
 
-1. **Root manager:** none, KernelSU, KernelSU-Next or SukiSU.
-2. **SUSFS:** only offered with SukiSU.
+1. **Root manager:** none, KernelSU-Next, SukiSU or BakaSU.
+2. **SUSFS:** yes or no (not asked for "none").
 3. **Clean build:** say yes after pulling updates.
 
 The first build downloads Android Clang (about 1.4 GB, kept in
@@ -61,8 +61,8 @@ dist/Wonderful-0.8-a23xq-KernelSU-Next-5b7c369.txt   <- what is inside
 `run.sh` passes options straight to `build.sh`, so you can script builds:
 
 ```bash
-./run.sh --root ksu                 # KernelSU
 ./run.sh --root ksun                # KernelSU-Next
+./run.sh --root bakasu --susfs      # BakaSU with SUSFS
 ./run.sh --root sukisu --susfs      # SukiSU with SUSFS
 ./run.sh --clean                    # vanilla, from scratch
 ./build.sh --help                   # every option
@@ -70,15 +70,15 @@ dist/Wonderful-0.8-a23xq-KernelSU-Next-5b7c369.txt   <- what is inside
 
 | Option | Meaning |
 |---|---|
-| `--root none\|ksu\|ksun\|sukisu` | Root manager to build in (default: none) |
-| `--susfs` | Add SUSFS (SukiSU only) |
+| `--root none\|ksun\|sukisu\|bakasu` | Root manager to build in (default: none) |
+| `--susfs` | Add SUSFS |
 | `--jobs N` | Parallel jobs (default: all CPU cores) |
 | `--lto none\|thin\|full` | Override link-time optimization |
 | `--clean` | Delete `out/` first |
 | `--no-zip` | Only build the kernel Image |
 
-Root drivers are pinned to tested commits (`KSU_REF`, `KSUN_REF`, `SUKISU_REF`
-in `build.sh`). To try a newer one: `KSUN_REF=legacy ./run.sh --root ksun`.
+Root drivers are pinned to tested commits (`KSUN_REF`, `KSUN_SUSFS_REF`,
+`SUKISU_REF`, `BAKASU_REF` in `build.sh`). To try a newer one: `KSUN_REF=legacy ./run.sh --root ksun`.
 
 ## Your source tree stays clean
 

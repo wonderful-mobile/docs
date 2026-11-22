@@ -379,3 +379,9 @@ a.card:hover { background: var(--card-hover); text-decoration: none; }
 .notice strong { color: var(--warning); }
 
 ol.flash-steps li { margin: 6px 0; }
+
+/* Website pages without a sidebar */
+.content.page { padding-top: 32px; padding-bottom: 64px; }
+.content.page > .wizard, .content.page > .narrow { max-width: 760px; }
+.logo-row { display: flex; align-items: center; gap: 14px; }
+.logo-row img { width: 48px; height: 48px; border-radius: 10px; flex: none; }

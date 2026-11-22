@@ -3,9 +3,10 @@
 What Wonderful Kernel changes compared to the stock Samsung kernel. Every
 change is chosen so Samsung's own drivers and modules keep working.
 
-> Wonderful Kernel never overclocks or undervolts. On the Snapdragon 695 the
-> CPU voltage is controlled by firmware, and overclocking costs battery and
-> stability for little real gain.
+!!! note
+    Wonderful Kernel never overclocks or undervolts. On the Snapdragon 695 the
+    CPU voltage is controlled by firmware, and overclocking costs battery and
+    stability for little real gain.
 
 ## Performance
 
@@ -44,7 +45,7 @@ change is chosen so Samsung's own drivers and modules keep working.
 
 | Tweak | What it does |
 |---|---|
-| Root built in (optional) | KernelSU, KernelSU-Next or SukiSU, chosen when you [download](download.md). See [Root managers](root-managers.md). |
-| SUSFS (optional) | Hides root from apps that block rooted phones. Available with SukiSU. See [SUSFS](root-managers.md#susfs). |
+| Root built in (optional) | KernelSU-Next, SukiSU or BakaSU, chosen when you download. See [Root managers](root-managers.md). |
+| SUSFS (optional) | Hides root from apps that block rooted phones. Available with every root manager. See [SUSFS](root-managers.md#susfs). |
 | APatch compatible | The vanilla kernel can be patched with APatch, like Magisk. |
 | Samsung hypervisor off | Knox's hypervisor (uh/RKP/KDP) and DEFEX are disabled, so root works reliably. |

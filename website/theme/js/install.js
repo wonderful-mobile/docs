@@ -10,7 +10,8 @@
 
   const root = document.getElementById("wizard");
   if (!root) return;
-  const docsBase = root.dataset.docs;
+  const docsBase = root.dataset.docs;   // documentation site
+  const siteBase = root.dataset.base;   // this website, for assets
   const siteLogo = root.dataset.logo;
 
   const state = { step: 0, device: null, root: null, susfs: null };
@@ -96,13 +97,14 @@
       el("div", { class: "choices" },
         Object.entries(data.roots).map(([id, r]) => choice({
           selected: state.root === id,
-          image: r.logo ? docsBase + r.logo : siteLogo,
+          image: r.logo ? siteBase + r.logo : siteLogo,
           disabled: !d.roots.includes(id),
           title: r.name,
           badge: r.recommended ? "Recommended" : null,
           text: d.roots.includes(id) ? r.summary : "Not available for this phone yet.",
           onclick: () => { state.root = id; state.susfs = susfsPossible() ? state.susfs : false; render(); },
         }))),
+      data.note_no_kernelsu ? el("p", { class: "help" }, data.note_no_kernelsu) : null,
       nav(state.root !== null));
   }
 
@@ -114,10 +116,10 @@
         "It changes many parts of the kernel, so only add it if you need it. You can switch later."),
       el("div", { class: "choices" },
         choice({ selected: state.susfs === false, image: siteLogo, title: "No",
-          text: "SukiSU without SUSFS.",
+          text: `${data.roots[state.root].name} without SUSFS.`,
           onclick: () => { state.susfs = false; render(); } }),
-        choice({ selected: state.susfs === true, image: docsBase + data.susfs.logo, title: "Yes, add SUSFS",
-          text: "Also install the SUSFS module from the SukiSU manager.",
+        choice({ selected: state.susfs === true, image: siteBase + data.susfs.logo, title: "Yes, add SUSFS",
+          text: `Also install the SUSFS module from the ${data.roots[state.root].name} manager.`,
           onclick: () => { state.susfs = true; render(); } })),
       nav(state.susfs !== null));
   }
@@ -145,7 +147,7 @@
       el("ol", { class: "flash-steps" },
         el("li", {}, "First time: follow the ", el("a", { href: docsBase + "wonderful-kernel/install/" }, "install guide"), ". Already on Wonderful Kernel: follow the ", el("a", { href: docsBase + "wonderful-kernel/upgrade/" }, "upgrade guide"), "."),
         r.manager ? el("li", {}, "Install the ", el("a", { href: r.manager, target: "_blank", rel: "noopener" }, r.manager_name), ".") : null,
-        state.susfs ? el("li", {}, "Install the ", el("a", { href: data.susfs.module, target: "_blank", rel: "noopener" }, "SUSFS module"), " from the SukiSU manager.") : null),
+        state.susfs ? el("li", {}, "Install the ", el("a", { href: data.susfs.module, target: "_blank", rel: "noopener" }, "SUSFS module"), ` from the ${r.name} manager.`) : null),
       el("div", { class: "notice" },
         el("strong", {}, "Note: "),
         "unlocking the bootloader wipes the phone and trips Knox permanently. Keep a backup of your stock boot image."),

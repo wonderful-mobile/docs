@@ -1,0 +1,46 @@
+# Wonderful Mobile website (landing pages and download guide).
+# The documentation is the separate MkDocs site in the repository root.
+#
+#   cd website && mkdocs serve -a 127.0.0.1:8001
+#
+# Links written as "@docs/..." in pages point to the docs site. Set DOCS_URL
+# to preview against a local docs server (e.g. http://127.0.0.1:8000/).
+
+site_name: Wonderful Mobile
+site_description: Wonderful Mobile builds custom kernels for Android phones, and publishes the build tools and patches behind them.
+site_author: Wonderful Mobile Project
+repo_url: https://github.com/wonderful-mobile/docs
+
+docs_dir: pages
+
+theme:
+  name: null
+  custom_dir: theme
+  locale: en
+
+plugins: []
+
+nav:
+  - Home: index.md
+  - Wonderful Kernel: wonderful-kernel.md
+  - Download: download.md
+  - Tools and Patches: tools.md
+  - Our Team: team.md
+
+extra:
+  docs_url: !ENV [DOCS_URL, "https://wonderful-mobile-docs.techtransthai.org/"]
+  logo: https://dl.techtransthai.org/resources/icons/wonderful-mobile.svg
+  github: https://github.com/wonderful-mobile
+  header_links:
+    - title: Wonderful Kernel
+      url: wonderful-kernel/
+    - title: Download
+      url: download/
+    - title: Tools and Patches
+      url: tools/
+  footer: Wonderful Mobile is a TechTransThai project. Content licensed under CC BY-SA 4.0.
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
