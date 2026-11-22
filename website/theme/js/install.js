@@ -11,7 +11,8 @@
   const root = document.getElementById("wizard");
   if (!root) return;
   const docsBase = root.dataset.docs;   // documentation site
-  const siteBase = root.dataset.base;   // this website, for assets
+  // this website, for assets ("..", "." or "../" -> always ends with "/")
+  const siteBase = root.dataset.base.replace(/\/?$/, "/");
   const siteLogo = root.dataset.logo;
 
   const state = { step: 0, device: null, root: null, susfs: null };
