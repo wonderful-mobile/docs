@@ -13,7 +13,7 @@ your phone's firmware. First time? See [Install](install.md).
 | Remove Wonderful Kernel | [Go back to stock](#go-back-to-stock) |
 
 Check which variant you have in Settings → About phone → Software information
-→ **Kernel version**, for example `5.4.254-wonderful-0.8-KernelSU-Next`.
+→ **Kernel version**, for example `5.4.254-wonderful-0.9-KernelSU-Next`.
 
 ## Same variant {: #same-variant }
 

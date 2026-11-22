@@ -52,8 +52,8 @@ The first build downloads Android Clang (about 1.4 GB, kept in
 finishes, your zip is in `dist/`:
 
 ```text
-dist/Wonderful-0.8-a23xq-KernelSU-Next-5b7c369.zip
-dist/Wonderful-0.8-a23xq-KernelSU-Next-5b7c369.txt   <- what is inside
+dist/Wonderful-0.9-a23xq-KernelSU-Next-b49798b.zip
+dist/Wonderful-0.9-a23xq-KernelSU-Next-b49798b.txt   <- what is inside
 ```
 
 ## Without questions
