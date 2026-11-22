@@ -46,7 +46,8 @@ on the [device page](samsung-a23xq.md). A firmware update replaces the
 kernel, and often TWRP too.
 
 1. Wait until a Wonderful Kernel release supports the new firmware.
-2. Flash the new firmware with Odin. Use **HOME_CSC**, not CSC, or your data
+2. Enter Download mode ([Install, step 3](install.md#3-install-twrp)) and
+   flash the new firmware with Odin. Use **HOME_CSC**, not CSC, or your data
    is wiped.
 3. Install TWRP again ([Install, step 3](install.md#3-install-twrp)) and take
    a new boot backup.
