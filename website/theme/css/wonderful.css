@@ -343,7 +343,7 @@ a.card:hover { background: var(--card-hover); text-decoration: none; }
 .choice:hover { background: var(--card-hover); }
 .choice.selected { border-color: var(--accent); }
 .choice[disabled] { opacity: 0.5; cursor: not-allowed; }
-.choice img { width: 48px; height: 48px; object-fit: contain; flex: none; }
+.choice img { width: 76px; height: 52px; object-fit: contain; flex: none; }
 .choice strong { display: block; font-size: 16px; }
 .choice small { display: block; color: var(--dim); font-size: 14px; margin-top: 2px; }
 .choice .badge {
@@ -384,4 +384,4 @@ ol.flash-steps li { margin: 6px 0; }
 .content.page { padding-top: 32px; padding-bottom: 64px; }
 .content.page > .wizard, .content.page > .narrow { max-width: 760px; }
 .logo-row { display: flex; align-items: center; gap: 14px; }
-.logo-row img { width: 48px; height: 48px; border-radius: 10px; flex: none; }
+.logo-row img { width: 76px; height: 52px; object-fit: contain; flex: none; }

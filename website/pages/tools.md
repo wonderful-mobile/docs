@@ -46,11 +46,11 @@ reuse our work in your own kernel.
 <span><h3>KernelSU-Next hooks</h3><p>Manual hooks for KernelSU-Next, in the kernel source. They also fit the SUSFS driver.</p></span>
 </div>
 <div class="card logo-row">
-<img src="../assets/logos/sukisu.webp" alt="" width="48" height="48">
+<img src="../assets/logos/sukisu.svg" alt="" width="48" height="48">
 <span><h3>SukiSU hooks</h3><p>Kernel hooks for SukiSU, with and without SUSFS, plus two driver fixes for 5.4.</p></span>
 </div>
 <div class="card logo-row">
-<img src="../assets/logos/bakasu.webp" alt="" width="48" height="48">
+<img src="../assets/logos/bakasu.svg" alt="" width="48" height="48">
 <span><h3>BakaSU hooks</h3><p>Kernel hooks for BakaSU, with and without SUSFS. They pass BakaSU's build-time hook checks.</p></span>
 </div>
 </div>

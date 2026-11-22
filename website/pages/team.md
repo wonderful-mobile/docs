@@ -38,6 +38,11 @@ Wonderful Kernel builds on the work of many open-source projects, including
 [AnyKernel3](https://github.com/osm0sis/AnyKernel3) by osm0sis,
 and [rsuntk](https://github.com/rsuntk), who started this kernel's build tooling.
 
+Root manager logos belong to their projects. The BakaSU logo is by
+[OukaroMF](https://github.com/OukaroMF), licensed
+[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/), and is
+shown unmodified.
+
 ## Get involved
 
 Report bugs and send patches on [GitHub](https://github.com/wonderful-mobile),

@@ -18,7 +18,7 @@
       "name": "SukiSU",
       "summary": "KernelSU fork with SUSFS built in.",
       "variant": "SukiSU",
-      "logo": "assets/logos/sukisu.webp",
+      "logo": "assets/logos/sukisu.svg",
       "manager": "https://github.com/SukiSU-Nova/SukiSU-Nova/releases",
       "manager_name": "SukiSU manager"
     },
@@ -26,7 +26,7 @@
       "name": "BakaSU",
       "summary": "KernelSU fork with SUSFS built in. Needs the fewest kernel hooks.",
       "variant": "BakaSU",
-      "logo": "assets/logos/bakasu.webp",
+      "logo": "assets/logos/bakasu.svg",
       "manager": "https://github.com/Baka-SU/BakaSU/releases",
       "manager_name": "BakaSU manager"
     }

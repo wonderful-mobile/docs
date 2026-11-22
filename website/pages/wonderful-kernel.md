@@ -61,11 +61,11 @@ with or without SUSFS.
 <span><h3>KernelSU-Next</h3><p>KernelSU fork with extra module features. A good default.</p></span>
 </div>
 <div class="card logo-row">
-<img src="../assets/logos/sukisu.webp" alt="SukiSU logo" width="48" height="48">
+<img src="../assets/logos/sukisu.svg" alt="SukiSU logo" width="48" height="48">
 <span><h3>SukiSU</h3><p>KernelSU fork with SUSFS built in.</p></span>
 </div>
 <div class="card logo-row">
-<img src="../assets/logos/bakasu.webp" alt="BakaSU logo" width="48" height="48">
+<img src="../assets/logos/bakasu.svg" alt="BakaSU logo" width="48" height="48">
 <span><h3>BakaSU</h3><p>KernelSU fork with SUSFS built in. Needs the fewest kernel hooks.</p></span>
 </div>
 <div class="card logo-row">

@@ -37,14 +37,14 @@ own: use the KernelSU-Next manager.
 
 ## SukiSU {: #sukisu }
 
-![SukiSU logo](../assets/logos/sukisu.webp){ width="56" }
+![SukiSU logo](../assets/logos/sukisu.svg){ width="140" }
 
 A KernelSU fork with SUSFS built in (formerly SukiSU-Ultra, now
 [SukiSU-Nova](https://github.com/SukiSU-Nova/SukiSU-Nova)).
 
 ## BakaSU {: #bakasu }
 
-![BakaSU logo](../assets/logos/bakasu.webp){ width="56" }
+![BakaSU logo](../assets/logos/bakasu.svg){ width="140" }
 
 A KernelSU fork with SUSFS built in ([Baka-SU/BakaSU](https://github.com/Baka-SU/BakaSU)).
 Without SUSFS, BakaSU handles boot scripts, setuid and safe mode itself, so it
@@ -61,3 +61,10 @@ manager above has a SUSFS variant. Configure it with the
 from your root manager.
 
 SUSFS changes many parts of the kernel. Only use it if you need it.
+
+---
+
+Logos belong to their projects. The BakaSU logo is by
+[OukaroMF](https://github.com/OukaroMF), licensed
+[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/), and is
+shown unmodified.
