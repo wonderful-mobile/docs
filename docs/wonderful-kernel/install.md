@@ -20,8 +20,7 @@ How to install Wonderful Kernel for the first time. Already have it? See
   See [Root managers](root-managers.md).
 - Your phone's stock firmware, in case you need to go back. Download the exact
   version you are running (Settings → About phone → Software information →
-  Build number) with a tool such as [samfirm.js](https://github.com/jesec/samfirm.js)
-  or [Bifrost](https://github.com/zacharee/SamloaderKotlin).
+  Build number) from [samfw.com](https://samfw.com/).
 
 ## 1. Back up your phone
 
