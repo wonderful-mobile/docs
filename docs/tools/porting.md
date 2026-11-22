@@ -14,8 +14,10 @@ wonderful/
   anykernel.sh              AnyKernel3 script for this device
   patches/
     susfs/5.4/              SUSFS, ported to this kernel
+    root/ksu/               turns off in-tree hooks for KernelSU
     root/sukisu/            hooks that SukiSU needs
     root/sukisu-susfs/      hooks that SukiSU + SUSFS needs
+    driver/sukisu/          fixes applied to the downloaded SukiSU driver
 ```
 
 The KernelSU-Next manual hooks are part of the kernel source itself (guarded by
@@ -39,6 +41,7 @@ When building, `build.sh` does this:
 
 | Build | Applied |
 |---|---|
+| `--root ksu` | KernelSU driver, then `patches/root/ksu/` (turns off in-tree hooks) |
 | `--root ksun` | KernelSU-Next driver only (hooks are in the source) |
 | `--root sukisu` | SukiSU driver, then `patches/root/sukisu/` |
 | `--root sukisu --susfs` | SukiSU driver, then `patches/susfs/<kernel version>/`, then `patches/root/sukisu-susfs/` |

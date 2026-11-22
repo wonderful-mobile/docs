@@ -11,6 +11,7 @@
   const root = document.getElementById("wizard");
   if (!root) return;
   const docsBase = root.dataset.docs;
+  const siteLogo = root.dataset.logo;
 
   const state = { step: 0, device: null, root: null, susfs: null };
   let data = null;
@@ -69,7 +70,7 @@
   function questionDevice() {
     return el("div", { class: "question" },
       el("h2", {}, "Which phone do you have?"),
-      el("p", { class: "help" }, "Check Settings → About phone → Model number."),
+      el("p", { class: "help" }, "Your model number is in Settings → About phone."),
       el("div", { class: "choices" },
         data.devices.map((d) => choice({
           selected: state.device === d.codename,
@@ -83,18 +84,19 @@
             render();
           },
         }))),
-      el("p", { class: "help" }, "Phone not listed? It is not supported yet. Ask in the Telegram chat."),
+      el("p", { class: "help" }, "Only the phones listed here are supported."),
       nav(state.device !== null));
   }
 
   function questionRoot() {
     const d = device();
     return el("div", { class: "question" },
-      el("h2", {}, "Do you want root?"),
-      el("p", { class: "help" }, "Root lets apps and modules change the system. The root manager is built into the kernel, so pick one now."),
+      el("h2", {}, "Which root manager?"),
+      el("p", { class: "help" }, "The root manager is built into the kernel. Not sure? Pick KernelSU-Next, or No root if you don't need root."),
       el("div", { class: "choices" },
         Object.entries(data.roots).map(([id, r]) => choice({
           selected: state.root === id,
+          image: r.logo ? docsBase + r.logo : siteLogo,
           disabled: !d.roots.includes(id),
           title: r.name,
           badge: r.recommended ? "Recommended" : null,
@@ -108,14 +110,14 @@
     return el("div", { class: "question" },
       el("h2", {}, "Add SUSFS?"),
       el("p", { class: "help" },
-        "SUSFS hides root from apps that refuse to run on rooted phones, such as some banking apps and games. " +
-        "It is optional. If you are not sure, choose No: you can always flash the other zip later."),
+        "SUSFS hides root from apps that refuse to run on rooted phones. " +
+        "It changes many parts of the kernel, so only add it if you need it. You can switch later."),
       el("div", { class: "choices" },
-        choice({ selected: state.susfs === false, title: "No", badge: "Recommended",
-          text: "Simpler and closest to the tested setup.",
+        choice({ selected: state.susfs === false, image: siteLogo, title: "No",
+          text: "SukiSU without SUSFS.",
           onclick: () => { state.susfs = false; render(); } }),
-        choice({ selected: state.susfs === true, title: "Yes, add SUSFS",
-          text: "You will also need the SUSFS module in your root manager.",
+        choice({ selected: state.susfs === true, image: docsBase + data.susfs.logo, title: "Yes, add SUSFS",
+          text: "Also install the SUSFS module from the SukiSU manager.",
           onclick: () => { state.susfs = true; render(); } })),
       nav(state.susfs !== null));
   }
@@ -128,7 +130,7 @@
     const url = `https://github.com/${d.repo}/releases/latest/download/${file}`;
 
     return el("div", { class: "question" },
-      el("h2", {}, "Your kernel is ready"),
+      el("h2", {}, "Your download"),
       el("div", { class: "result" },
         el("dl", {},
           el("dt", {}, "Phone"), el("dd", {}, `${d.name} (${d.codename})`),
@@ -139,19 +141,15 @@
           el("a", { class: "button accent", href: url }, "Download flashable zip"),
           el("a", { class: "button", href: `https://github.com/${d.repo}/releases/latest`, target: "_blank", rel: "noopener" }, "Release notes"))),
 
-      el("div", { class: "notice" },
-        el("strong", {}, "Before you flash: "),
-        "unlocking the bootloader trips Knox and can void your warranty. Back up your data, and keep a copy of your stock boot.img so you can go back."),
-
-      el("h3", {}, "How to flash"),
+      el("h3", {}, "Next steps"),
       el("ol", { class: "flash-steps" },
-        el("li", {}, "Your bootloader must be unlocked, and you need a custom recovery or a root app that can flash AnyKernel3 zips."),
-        el("li", {}, "Start from the stock (unrooted) boot image if you are switching from another kernel or root method."),
-        el("li", {}, "Copy the zip to your phone and flash it in recovery (Install → select zip), or with your current root manager."),
-        el("li", {}, "Reboot.",),
-        r.manager ? el("li", {}, "Install the ", el("a", { href: r.manager, target: "_blank", rel: "noopener" }, r.manager_name), " app to manage root.") : null,
-        state.susfs ? el("li", {}, "Install the SUSFS module from your root manager to configure what gets hidden.") : null),
-      el("p", {}, "More details: ", el("a", { href: docsBase + d.docs }, `${d.name} guide`), "."),
+        el("li", {}, "First time: follow the ", el("a", { href: docsBase + "wonderful-kernel/install/" }, "install guide"), ". Already on Wonderful Kernel: follow the ", el("a", { href: docsBase + "wonderful-kernel/upgrade/" }, "upgrade guide"), "."),
+        r.manager ? el("li", {}, "Install the ", el("a", { href: r.manager, target: "_blank", rel: "noopener" }, r.manager_name), ".") : null,
+        state.susfs ? el("li", {}, "Install the ", el("a", { href: data.susfs.module, target: "_blank", rel: "noopener" }, "SUSFS module"), " from the SukiSU manager.") : null),
+      el("div", { class: "notice" },
+        el("strong", {}, "Note: "),
+        "unlocking the bootloader wipes the phone and trips Knox permanently. Keep a backup of your stock boot image."),
+      el("p", {}, "Device details: ", el("a", { href: docsBase + d.docs }, d.name), "."),
       nav(true));
   }
 

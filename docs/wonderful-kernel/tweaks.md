@@ -44,7 +44,7 @@ change is chosen so Samsung's own drivers and modules keep working.
 
 | Tweak | What it does |
 |---|---|
-| Root built in (optional) | KernelSU-Next or SukiSU, chosen when you download. See [Install](../install.md). |
-| SUSFS (optional) | Hides root from apps that block rooted phones. Available with SukiSU. |
+| Root built in (optional) | KernelSU, KernelSU-Next or SukiSU, chosen when you [download](download.md). See [Root managers](root-managers.md). |
+| SUSFS (optional) | Hides root from apps that block rooted phones. Available with SukiSU. See [SUSFS](root-managers.md#susfs). |
 | APatch compatible | The vanilla kernel can be patched with APatch, like Magisk. |
 | Samsung hypervisor off | Knox's hypervisor (uh/RKP/KDP) and DEFEX are disabled, so root works reliably. |

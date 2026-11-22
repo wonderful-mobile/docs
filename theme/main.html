@@ -18,11 +18,11 @@
     <div class="headerbar-inner">
       <a class="brand" href="{{ nav.homepage.url|url }}">
         <img src="{{ config.extra.logo }}" alt="" width="32" height="32">
-        <span>Wonderful</span>
+        <span>Wonderful Mobile</span>
       </a>
       <nav aria-label="Main">
         {% for link in config.extra.header_links %}
-        <a href="{{ link.url|url }}"{% if page and page.url == link.url %} class="active"{% endif %}>{{ link.title }}</a>
+        <a href="{{ link.url|url }}"{% if page and page.url.startswith(link.url) %} class="active"{% endif %}>{{ link.title }}</a>
         {% endfor %}
         <a href="{{ config.extra.github }}" target="_blank" rel="noopener">GitHub</a>
       </nav>

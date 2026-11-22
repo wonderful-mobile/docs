@@ -1,7 +1,7 @@
-# Building
+# Building the kernel
 
-You don't need to be a kernel developer to build Wonderful Kernel. One script
-downloads the compiler, asks what you want, and gives you a flashable zip.
+One script downloads the compiler, asks which variant you want, and builds a
+flashable zip. No kernel development experience needed.
 
 ## What you need
 
@@ -43,7 +43,7 @@ sudo apt install -y bc bison flex git make perl python3 curl zip cpio lz4 libssl
 
 It asks three questions:
 
-1. **Root manager:** none, KernelSU-Next or SukiSU.
+1. **Root manager:** none, KernelSU, KernelSU-Next or SukiSU.
 2. **SUSFS:** only offered with SukiSU.
 3. **Clean build:** say yes after pulling updates.
 
@@ -61,6 +61,7 @@ dist/Wonderful-0.8-a23xq-KernelSU-Next-5b7c369.txt   <- what is inside
 `run.sh` passes options straight to `build.sh`, so you can script builds:
 
 ```bash
+./run.sh --root ksu                 # KernelSU
 ./run.sh --root ksun                # KernelSU-Next
 ./run.sh --root sukisu --susfs      # SukiSU with SUSFS
 ./run.sh --clean                    # vanilla, from scratch
@@ -69,15 +70,15 @@ dist/Wonderful-0.8-a23xq-KernelSU-Next-5b7c369.txt   <- what is inside
 
 | Option | Meaning |
 |---|---|
-| `--root none\|ksun\|sukisu` | Root manager to build in (default: none) |
+| `--root none\|ksu\|ksun\|sukisu` | Root manager to build in (default: none) |
 | `--susfs` | Add SUSFS (SukiSU only) |
 | `--jobs N` | Parallel jobs (default: all CPU cores) |
 | `--lto none\|thin\|full` | Override link-time optimization |
 | `--clean` | Delete `out/` first |
 | `--no-zip` | Only build the kernel Image |
 
-Root drivers are pinned to tested commits. To try a newer one:
-`KSUN_REF=legacy ./run.sh --root ksun`.
+Root drivers are pinned to tested commits (`KSU_REF`, `KSUN_REF`, `SUKISU_REF`
+in `build.sh`). To try a newer one: `KSUN_REF=legacy ./run.sh --root ksun`.
 
 ## Your source tree stays clean
 
