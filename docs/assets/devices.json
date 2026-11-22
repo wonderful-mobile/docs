@@ -1,0 +1,40 @@
+{
+  "roots": {
+    "none": {
+      "name": "No root",
+      "summary": "Plain Wonderful Kernel. Pick this if you do not need root, or want to root later with APatch.",
+      "variant": "Vanilla"
+    },
+    "ksun": {
+      "name": "KernelSU-Next",
+      "summary": "Kernel-based root with module support. The best choice for most people.",
+      "recommended": true,
+      "variant": "KernelSU-Next",
+      "manager": "https://github.com/KernelSU-Next/KernelSU-Next/releases",
+      "manager_name": "KernelSU-Next manager"
+    },
+    "sukisu": {
+      "name": "SukiSU",
+      "summary": "A KernelSU fork with extra features. Needed if you want SUSFS.",
+      "variant": "SukiSU",
+      "manager": "https://github.com/SukiSU-Nova/SukiSU-Nova/releases",
+      "manager_name": "SukiSU manager"
+    }
+  },
+  "devices": [
+    {
+      "codename": "a23xq",
+      "name": "Samsung Galaxy A23 5G",
+      "models": "SM-A236B",
+      "soc": "Snapdragon 695",
+      "firmware": "Android 14 (One UI 6)",
+      "kernel": "Linux 5.4",
+      "status": "Beta",
+      "image": "https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp",
+      "docs": "wonderful-kernel/samsung-a23xq/",
+      "repo": "wonderful-mobile/android_kernel_samsung_a23xq",
+      "roots": ["none", "ksun", "sukisu"],
+      "susfs": ["sukisu"]
+    }
+  ]
+}

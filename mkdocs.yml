@@ -1,18 +1,48 @@
-site_name: Wonderful Mobile Docs
+site_name: Wonderful Mobile
 site_url: https://wonderful-mobile-docs.techtransthai.org
 repo_url: https://github.com/wonderful-mobile/docs
-edit_uri: 'tree/main/docs/'
+edit_uri: 'edit/main/docs/'
 
-site_description: Wonderful Mobile Documentation
+site_description: Wonderful Mobile makes Android phones faster, longer lasting and more open, with custom kernels and developer tools.
 site_author: Wonderful Mobile Project
+
 theme:
-  name: readthedocs
+  name: null
+  custom_dir: theme
+  locale: en
+
+# The custom theme has no search UI.
+plugins: []
+
 nav:
   - Home: index.md
+  - Install: install.md
   - Wonderful Kernel:
       - About: wonderful-kernel/index.md
-      - Devices: 
-        - Samsung Galaxy A23 5G: wonderful-kernel/samsung-a23xq.md
+      - Tweaks: wonderful-kernel/tweaks.md
+      - Devices:
+          - Samsung Galaxy A23 5G: wonderful-kernel/samsung-a23xq.md
+      - Building: wonderful-kernel/building.md
+      - Porting to your kernel: wonderful-kernel/porting.md
+
+extra:
+  logo: https://dl.techtransthai.org/resources/icons/wonderful-mobile.svg
+  github: https://github.com/wonderful-mobile
+  header_links:
+    - title: Install
+      url: install/
+    - title: Kernel
+      url: wonderful-kernel/
+    - title: Devices
+      url: wonderful-kernel/samsung-a23xq/
+    - title: Build
+      url: wonderful-kernel/building/
+  footer: Wonderful Mobile is a TechTransThai project. Documentation licensed under CC BY-SA 4.0.
 
 markdown_extensions:
+  - tables
+  - toc:
+      permalink: false
+  - attr_list
+  - md_in_html
   - pymdownx.tilde

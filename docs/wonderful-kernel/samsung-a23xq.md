@@ -1,95 +1,61 @@
-# Samsung Galaxy A23 5G (samsung-a23xq)
+# Samsung Galaxy A23 5G (a23xq)
 
-Wonderful Kernel for Samsung Galaxy A23 5G (samsung-a23xq).
+<div class="card device-card">
+<img src="https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp" alt="" width="72" height="72">
+<span>
+<h3>Samsung Galaxy A23 5G</h3>
+<p>SM-A236B · Snapdragon 695 · Android 14 (One UI 6) · Linux 5.4</p>
+<span class="tags"><span class="tag">a23xq</span><span class="tag beta">Beta</span></span>
+</span>
+</div>
 
 ## Warning
-- **Modifying your device will blow the Knox e-fuse and void your warranty**
-- **The user shall be responsible for any kind of damage to your phone whether soft or hard brick**
+
+- **Modifying your device trips the Knox e-fuse and can void your warranty.**
+- **You are responsible for any damage to your phone, soft or hard brick.**
+- Built from Samsung's SM-A236B source (firmware A236BXXSEEZB1). Other models
+  of the A23 5G are not tested.
+
+## Download
+
+The easiest way is the [install guide](../install.md): it asks which root
+manager you want and gives you the right zip.
+
+Or pick a file from the [latest release](https://github.com/wonderful-mobile/android_kernel_samsung_a23xq/releases/latest):
+
+| File | Root | SUSFS |
+|---|---|---|
+| `Wonderful-a23xq-Vanilla.zip` | None | No |
+| `Wonderful-a23xq-KernelSU-Next.zip` | KernelSU-Next | No |
+| `Wonderful-a23xq-SukiSU.zip` | SukiSU | No |
+| `Wonderful-a23xq-SukiSU-SUSFS.zip` | SukiSU | Yes |
+
+Older builds are on [dl.techtransthai.org](https://dl.techtransthai.org/wonderful-mobile/Wonderful-Kernel/a23xq/).
+
+## Flashing
+
+1. Unlock the bootloader.
+2. Make sure you are on the **stock, unrooted boot image**. Keep a copy of it.
+3. Flash the zip with a custom recovery, or with an app that flashes
+   AnyKernel3 zips. The zip only replaces the kernel; the rest of your boot
+   image is kept.
+4. Reboot, then install the manager app for your root manager:
+   [KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next/releases) or
+   [SukiSU](https://github.com/SukiSU-Nova/SukiSU-Nova/releases).
+
+To go back to stock, flash your stock boot image again.
 
 ## Known issues
 
-- Found an issue? Let us know in our issue tracker or Telegram group chat!
+- Found an issue? Tell us in the [issue tracker](https://github.com/wonderful-mobile/android_kernel_samsung_a23xq/issues)
+  or the [Telegram chat](https://t.me/wonderful_mobile_chat).
 
-## Getting the kernel
+## Building it yourself
 
-- [Download from here](https://dl.techtransthai.org/wonderful-mobile/Wonderful-Kernel/a23xq/AOSP/Experiment/Anykernel3-Wonderful-0.7-experiment-aosp-a23xq-b3ebd1f8d-20251031010903-Next.zip), then proceed to [Flashing](#flashing)
-- If you want to build from source, see [Building the kernel](#building-the-kernel)
-
-
-## Building the kernel
-
-We recommend using **Ubuntu 24.04 LTS or newer** on **Intel or AMD 64-bit architecture**. Using Toolbox or Distrobox is also possible.
-
-This guide is tested on Ubuntu 24.04 LTS in a Toolbox on a Fedora Silverblue host.
-
-### Install needed dependencies
-
-```bash
-sudo apt update -y
-sudo apt install -y bc cpio flex bison git python-is-python3 tar perl wget curl lz4 libssl-dev make
-```
-
-### Clone the Kernel Source
+See [Building](building.md). In short:
 
 ```bash
 git clone https://github.com/wonderful-mobile/android_kernel_samsung_a23xq.git
 cd android_kernel_samsung_a23xq
-```
-
-### Set up extra toolchains
-
-```bash
-mkdir toolchain
-cd toolchain
-```
-
-Set up GCC 4.9
-
-```bash
-git clone --depth=1 https://github.com/rsuntk/toolchains.git -b androidcc-4.9 google
-```
-
-Set up Clang 12.0.7
-
-```bash
-mkdir clang-12.0.7
-cd clang-12.0.7
-wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android12L-security-release/clang-r416183b1.tar.gz
-tar -xvf clang-r416183b1.tar.gz
-```
-
-Now return to the kernel source directory
-
-```bash
-cd ../..
-```
-
-### Finalize configuration and build
-
-Make the script executable
-
-```bash
-chmod +x run.sh
-```
-
-Edit build hostname in `run.sh` as needed
-
-```
-# edit in run.sh
-export KBUILD_BUILD_USER="username"      # Change to your desired username
-export KBUILD_BUILD_HOST="hostname"      # Change to your desired hostname
-```
-
-Disable KernelSU and SuSFS in `run.sh` (for now, at least until fixed by upstream)
-
-```
-# edit in run.sh
-export KERNELSU=false
-export SUSFS4KSU=false
-```
-
-Start building
-
-```
 ./run.sh
 ```

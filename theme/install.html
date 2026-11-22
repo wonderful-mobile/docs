@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="wizard">
+  {{ page.content }}
+
+  <div id="wizard"
+       data-devices="{{ 'assets/devices.json'|url }}"
+       data-docs="{{ ''|url }}">
+    <noscript>
+      <div class="notice">
+        This guide needs JavaScript. Without it, pick your download from the
+        <a href="{{ 'wonderful-kernel/'|url }}">device pages</a>.
+      </div>
+    </noscript>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ 'js/install.js'|url }}" defer></script>
+{% endblock %}
