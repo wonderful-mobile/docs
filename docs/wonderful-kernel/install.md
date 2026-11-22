@@ -74,6 +74,10 @@ has [official TWRP](https://twrp.me/samsung/samsunggalaxya23xq.html).
 1. Download the latest `.tar` for **a23xq** from the TWRP page.
 2. Turn the phone off, then hold **Volume Up + Volume Down** while plugging
    it into the computer to enter Download mode.
+   You see a warning screen first: press **Volume Up** to continue. On the
+   latest firmware the warning text may be missing and the screen is just
+   blue. Press **Volume Up** anyway, until you see the Download mode screen
+   with a barcode and the Knox status.
 3. Open Odin, put the TWRP `.tar` in the **AP** slot, and in **Options** turn
    **Auto Reboot** off. Click **Start**.
 4. When Odin says **PASS**, hold **Volume Down + Power** until the screen goes
