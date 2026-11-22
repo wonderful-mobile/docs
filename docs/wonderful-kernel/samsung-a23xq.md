@@ -35,8 +35,8 @@ Then follow [Install](install.md) or [Upgrade](upgrade.md).
 
 ## Notes for this phone
 
-- Samsung's Knox hypervisor (uh, RKP, KDP) and DEFEX are disabled in Wonderful
-  Kernel. This is needed for root to work reliably.
+- Samsung Knox kernel features (hypervisor, DEFEX, PROCA, FIVE, Knox network
+  monitoring) are switched off. See [Tweaks](tweaks.md#samsung-knox-removed).
 - Samsung's prebuilt vendor modules (camera, audio, Wi-Fi) are loaded as they
   are. That is why some debug options stay on: turning them off would change
   structures those modules depend on.

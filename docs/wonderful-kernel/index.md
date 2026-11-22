@@ -7,6 +7,7 @@ needs to work, and change only what we can explain:
 - **Performance:** built with Clang at -O3 with ThinLTO, tuned for the phone's CPU.
 - **Battery:** schedutil CPU governor and power-efficient workqueues.
 - **Networking:** BBR congestion control with the fq_codel queue.
+- **Samsung Knox removed:** Knox's hypervisor, DEFEX, PROCA, FIVE and Knox network monitoring are switched off, for APatch and root support and less background work.
 - **Root (optional):** KernelSU-Next, SukiSU or BakaSU built in, each with an optional SUSFS variant.
 
 We do not overclock or undervolt. Every change is listed on the

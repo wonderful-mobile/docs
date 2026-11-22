@@ -30,6 +30,10 @@ only what we can explain. We do not overclock or undervolt.
 <p>BBR congestion control with the fq_codel queue for lower latency.</p>
 </div>
 <div class="card">
+<h3>Samsung Knox removed</h3>
+<p>Knox's hypervisor (uh, RKP, KDP), DEFEX, PROCA, FIVE and Knox network monitoring are switched off. APatch and root work, and less runs in the background.</p>
+</div>
+<div class="card">
 <h3>Root</h3>
 <p>Optional. KernelSU-Next, SukiSU or BakaSU built into the kernel, each with or without SUSFS.</p>
 </div>
@@ -37,7 +41,7 @@ only what we can explain. We do not overclock or undervolt.
 
 The full list is on the [Tweaks](@docs/wonderful-kernel/tweaks/) page.
 
-## Devices
+## Supported phones
 
 <div class="card-grid">
 <a class="card device-card" href="@docs/wonderful-kernel/samsung-a23xq/">
@@ -49,6 +53,9 @@ The full list is on the [Tweaks](@docs/wonderful-kernel/tweaks/) page.
 </span>
 </a>
 </div>
+
+Want Wonderful Kernel on another phone?
+[Fill in the device request form](https://forms.gle/Nhc1xfisRKfXGBL47).
 
 ## Variants
 

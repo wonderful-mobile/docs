@@ -48,4 +48,20 @@ change is chosen so Samsung's own drivers and modules keep working.
 | Root built in (optional) | KernelSU-Next, SukiSU or BakaSU, chosen when you download. See [Root managers](root-managers.md). |
 | SUSFS (optional) | Hides root from apps that block rooted phones. Available with every root manager. See [SUSFS](root-managers.md#susfs). |
 | APatch compatible | The vanilla kernel can be patched with APatch, like Magisk. |
-| Samsung hypervisor off | Knox's hypervisor (uh/RKP/KDP) and DEFEX are disabled, so root works reliably. |
+
+## Samsung Knox removed
+
+Samsung's kernel ships several Knox security and monitoring features. They
+block APatch and root, and some of them check every process start or network
+connection. Wonderful Kernel switches them off:
+
+| Stock feature | What it does | Why it is off |
+|---|---|---|
+| uh, RKP, KDP | Knox hypervisor that locks kernel memory and process credentials | Blocks APatch and root from changing credentials |
+| HDM | Knox hypervisor device manager | Depends on the hypervisor |
+| DEFEX | Samsung's root and exec restrictions | Kills or blocks root processes |
+| PROCA, FIVE | Checks the integrity of every started process and its files | Not useful once the system is modified, and runs on every process start |
+| Knox NCM | Knox network monitoring (per-app connection reporting for Knox enterprise) | Not needed outside managed work phones, and runs on every network connection |
+
+Knox is already tripped once the bootloader is unlocked, so Knox apps such as
+Secure Folder and Samsung Pay stop working either way.
