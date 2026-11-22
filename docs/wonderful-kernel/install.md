@@ -10,7 +10,8 @@ How to install Wonderful Kernel for the first time. Already have it? See
 
 ## What you need
 
-- A supported phone, see [Devices](index.md#devices).
+- A supported phone running **stock One UI, a GSI or a One UI port**, see
+  [Devices](index.md#devices). Not for device-specific AOSP ROMs such as LineageOS.
 - A Windows PC with Odin (Samsung's flashing tool), the
   [Samsung USB driver](https://developer.samsung.com/android-usb-driver), and a
   USB cable.

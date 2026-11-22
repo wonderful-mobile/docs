@@ -20,7 +20,7 @@ Next: [Install](install.md) · [Upgrade](upgrade.md) · [Downloads for the Galax
 
 | Phone | Model | Codename | Kernel | Firmware | Status |
 |---|---|---|---|---|---|
-| [Samsung Galaxy A23 5G](samsung-a23xq.md) | SM-A236B | a23xq | Linux 5.4 | Android 14 (One UI 6) | Beta |
+| [Samsung Galaxy A23 5G](samsung-a23xq.md) | SM-A236B, SM-A236E (any a23xq) | a23xq | Linux 5.4 | Stock One UI 6, GSIs, One UI ports | Beta |
 
 ## Variants
 
@@ -43,6 +43,12 @@ and GKI 1.0 kernels (Linux older than 5.10). See
 [Root managers](root-managers.md).
 
 ## Before you install
+
+!!! warning "Stock One UI, GSIs and One UI ports only"
+    Wonderful Kernel for the Galaxy A23 5G is made for **stock One UI**,
+    **GSIs** and **One UI ports**. **Do not use it on device-specific AOSP ROMs**
+    such as LineageOS builds for a23xq: they will not boot. We will start
+    working on a kernel for AOSP ROMs when those ROMs are ready.
 
 !!! warning
     Unlocking the bootloader on a Samsung phone trips Knox permanently and

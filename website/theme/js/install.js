@@ -86,6 +86,7 @@
             render();
           },
         }))),
+      device() && device().notice ? el("div", { class: "notice" }, el("strong", {}, "Note: "), device().notice) : null,
       el("p", { class: "help" }, "Only the phones listed here are supported."),
       nav(state.device !== null));
   }
@@ -149,6 +150,7 @@
         el("li", {}, "First time: follow the ", el("a", { href: docsBase + "wonderful-kernel/install/" }, "install guide"), ". Already on Wonderful Kernel: follow the ", el("a", { href: docsBase + "wonderful-kernel/upgrade/" }, "upgrade guide"), "."),
         r.manager ? el("li", {}, "Install the ", el("a", { href: r.manager, target: "_blank", rel: "noopener" }, r.manager_name), ".") : null,
         state.susfs ? el("li", {}, "Install the ", el("a", { href: data.susfs.module, target: "_blank", rel: "noopener" }, "SUSFS module"), ` from the ${r.name} manager.`) : null),
+      d.notice ? el("div", { class: "notice" }, el("strong", {}, "Supported ROMs: "), d.notice) : null,
       el("div", { class: "notice" },
         el("strong", {}, "Note: "),
         "unlocking the bootloader wipes the phone and trips Knox permanently. Keep a backup of your stock boot image."),

@@ -39,9 +39,9 @@
     {
       "codename": "a23xq",
       "name": "Samsung Galaxy A23 5G",
-      "models": "SM-A236B",
+      "models": "SM-A236B, SM-A236E",
       "soc": "Snapdragon 695",
-      "firmware": "Android 14 (One UI 6)",
+      "firmware": "One UI 6, GSIs, One UI ports",
       "kernel": "Linux 5.4",
       "status": "Beta",
       "image": "https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp",
@@ -57,7 +57,8 @@
         "ksun",
         "sukisu",
         "bakasu"
-      ]
+      ],
+      "notice": "Made for stock One UI, GSIs and One UI ports. Do not use it on device-specific AOSP ROMs such as LineageOS: they will not boot. A kernel for AOSP ROMs will come when those ROMs are ready."
     }
   ],
   "note_no_kernelsu": "Official KernelSU is not offered: it dropped support for non-GKI and GKI 1.0 kernels (Linux older than 5.10)."

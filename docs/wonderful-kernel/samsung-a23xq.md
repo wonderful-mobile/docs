@@ -2,14 +2,20 @@
 
 ![Samsung Galaxy A23 5G](https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp){ width="96" }
 
+!!! warning "Stock One UI, GSIs and One UI ports only"
+    Wonderful Kernel for the Galaxy A23 5G is made for **stock One UI**,
+    **GSIs** and **One UI ports**. **Do not use it on device-specific AOSP ROMs**
+    such as LineageOS builds for a23xq: they will not boot. We will start
+    working on a kernel for AOSP ROMs when those ROMs are ready.
+
 | | |
 |---|---|
-| Model | SM-A236B (other models are not tested) |
+| Model | Tested on SM-A236B and SM-A236E; any a23xq model with an unlockable bootloader should work |
 | Codename | a23xq |
 | SoC | Qualcomm Snapdragon 695 (2× Cortex-A78, 6× Cortex-A55, Adreno 619) |
 | Kernel | Linux 5.4.254 (QGKI) |
 | Built from | Samsung open source for firmware A236BXXSEEZB1 |
-| Firmware | Android 14, One UI 6 |
+| Firmware | Android 14 vendor (One UI 6). Works with stock One UI, GSIs and One UI ports |
 | Recovery | [Official TWRP](https://twrp.me/samsung/samsunggalaxya23xq.html) |
 | Source | [android_kernel_samsung_a23xq](https://github.com/wonderful-mobile/android_kernel_samsung_a23xq) |
 

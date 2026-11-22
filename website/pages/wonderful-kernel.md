@@ -48,10 +48,17 @@ The full list is on the [Tweaks](@docs/wonderful-kernel/tweaks/) page.
 <img src="https://dl.techtransthai.org/wonderful-mobile/devices/a23xq.webp" alt="" width="72" height="72" loading="lazy">
 <span>
 <h3>Samsung Galaxy A23 5G</h3>
-<p>SM-A236B · Snapdragon 695 · Linux 5.4 · Android 14</p>
+<p>SM-A236B, SM-A236E (any a23xq) · Snapdragon 695 · Linux 5.4</p>
 <span class="tags"><span class="tag">a23xq</span><span class="tag beta">Beta</span></span>
 </span>
 </a>
+</div>
+
+<div class="notice">
+<strong>Stock One UI, GSIs and One UI ports only.</strong> Do not use Wonderful
+Kernel for the Galaxy A23 5G on device-specific AOSP ROMs such as LineageOS:
+they will not boot. We will start working on a kernel for AOSP ROMs when those
+ROMs are ready.
 </div>
 
 Want Wonderful Kernel on another phone?
