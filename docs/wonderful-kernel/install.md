@@ -30,16 +30,41 @@ chats and anything else you want to keep.
 
 ## 2. Unlock the bootloader
 
-1. Settings → About phone → Software information → tap **Build number** seven
-   times to turn on Developer options.
-2. Settings → Developer options → turn on **OEM unlocking**. If it is missing,
-   connect to the internet, wait a few days, and check again.
-3. Turn the phone off. Hold **Volume Up + Volume Down** and plug in the USB
-   cable to enter Download mode.
-4. Long-press **Volume Up** to go to the unlock screen, then press
-   **Volume Up** again to confirm. The phone wipes itself and reboots.
-5. Set the phone up again, connect to the internet, and check that
-   **OEM unlocking** is still on and greyed out.
+### Prepare the phone
+
+1. **Remove your screen lock first** (recommended): Settings → Lock screen →
+   Screen lock type → **None**.
+2. If Settings → Developer options shows **OEM unlocking**, turn it on.
+   (To show Developer options: Settings → About phone → Software information →
+   tap **Build number** seven times.)
+3. On the latest firmware, turn on **Maintenance mode**: Settings →
+   **Device care** → **Maintenance mode** → Turn on. Wait until the phone has
+   restarted into Maintenance mode.
+
+### Enter Download mode
+
+With Maintenance mode on, restart the phone. While it restarts, hold
+**Volume Up + Volume Down** with the USB cable connected to a **computer**
+(not a charger).
+
+### Unlock
+
+One of two screens appears:
+
+- **A message about unlocking the bootloader:** hold **Volume Up** for 5–7
+  seconds until the unlock confirmation appears, then press **Volume Up** to
+  confirm.
+- **A blue screen with nothing on it:** hold **Volume Up** for 5–7 seconds
+  until the screen flashes, then press **Volume Up** once more to confirm.
+
+If the phone restarts, the bootloader is unlocked. The phone erases itself and
+starts the setup wizard.
+
+!!! note
+    On some firmware the screen stays black after the Samsung logo. That is the
+    bootloader warning screen: press the **Power** button to continue.
+
+Set the phone up again before continuing.
 
 ## 3. Install TWRP
 
@@ -47,7 +72,8 @@ Wonderful Kernel is installed as a zip from a custom recovery. The Galaxy A23 5G
 has [official TWRP](https://twrp.me/samsung/samsunggalaxya23xq.html).
 
 1. Download the latest `.tar` for **a23xq** from the TWRP page.
-2. Boot the phone into Download mode (step 2.3).
+2. Turn the phone off, then hold **Volume Up + Volume Down** while plugging
+   it into the computer to enter Download mode.
 3. Open Odin, put the TWRP `.tar` in the **AP** slot, and in **Options** turn
    **Auto Reboot** off. Click **Start**.
 4. When Odin says **PASS**, hold **Volume Down + Power** until the screen goes
