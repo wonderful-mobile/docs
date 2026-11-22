@@ -20,11 +20,6 @@ description: Wonderful Mobile builds custom kernels for Android phones, and publ
 <p>The build script, Nix shell and patch set behind Wonderful Kernel, for building it yourself or porting it to another kernel.</p>
 <span class="tags"><span class="tag">For developers</span></span>
 </a>
-<a class="card" href="https://github.com/wonderful-mobile/android_device_samsung_r0q" target="_blank" rel="noopener">
-<h3>Wonderful OS</h3>
-<p>Custom Android builds. Paused while we focus on the kernel.</p>
-<span class="tags"><span class="tag wip">Paused</span></span>
-</a>
 </div>
 </div>
 

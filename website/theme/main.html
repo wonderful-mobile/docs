@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.meta.description if page and page.meta and page.meta.description else config.site_description }}">
   <title>{% if page and page.title and not page.is_homepage %}{{ page.title }} · {% endif %}{{ config.site_name }}</title>
+  <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#222226" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="{{ config.extra.logo }}">
   <link rel="stylesheet" href="{{ 'css/wonderful.css'|url }}">
 </head>
@@ -15,13 +17,22 @@
         <img src="{{ config.extra.logo }}" alt="" width="32" height="32">
         <span>Wonderful Mobile</span>
       </a>
-      <nav aria-label="Main">
+      {%- macro nav_links() %}
         {% for link in config.extra.header_links %}
-        <a href="{{ link.url|url }}"{% if page and page.url == link.url %} class="active"{% endif %}>{{ link.title }}</a>
+        <a href="{{ link.url|url }}"{% if page and page.url == link.url %} class="active" aria-current="page"{% endif %}>{{ link.title }}</a>
         {% endfor %}
         <a href="{{ config.extra.docs_url }}">Docs</a>
         <a href="{{ config.extra.github }}" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      {%- endmacro %}
+      <nav class="nav-wide" aria-label="Main">{{ nav_links() }}</nav>
+      {#- Phones: a menu button, no JavaScript needed. #}
+      <details class="nav-menu">
+        <summary aria-label="Menu">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3h14v1.5H1zm0 4.25h14v1.5H1zM1 11.5h14V13H1z"/></svg>
+          Menu
+        </summary>
+        <nav aria-label="Main">{{ nav_links() }}</nav>
+      </details>
     </div>
   </header>
 
