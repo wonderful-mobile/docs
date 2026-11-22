@@ -12,15 +12,21 @@ How to install Wonderful Kernel for the first time. Already have it? See
 
 - A supported phone running **stock One UI, a GSI or a One UI port**, see
   [Devices](index.md#devices). Not for device-specific AOSP ROMs such as LineageOS.
-- A Windows PC with Odin (Samsung's flashing tool), the
-  [Samsung USB driver](https://developer.samsung.com/android-usb-driver), and a
-  USB cable.
+- A computer, a USB cable, and a Samsung flashing tool (see the table below).
 - The Wonderful Kernel zip for your phone, from its device page
   (e.g. [Galaxy A23 5G](samsung-a23xq.md#download)). Not sure which variant?
   See [Root managers](root-managers.md).
 - Your phone's stock firmware, in case you need to go back. Download the exact
   version you are running (Settings → About phone → Software information →
   Build number) from [samfw.com](https://samfw.com/).
+
+### Flashing tools
+
+| Computer | Tool | Notes |
+|---|---|---|
+| Windows | [Odin3](https://samfw.com/blog/download-odin-all-version) | Install the [Samsung USB driver](https://developer.samsung.com/android-usb-driver) first |
+| Linux | [odin4](https://github.com/Llucs/odin4) or [Heimdall](https://git.sr.ht/~grimler/Heimdall) | Run with `sudo` |
+| Other (macOS, ChromeOS, ...) | [Odin Web](https://samfw.com/Odinweb) | Untested |
 
 ## 1. Back up your phone
 
@@ -77,9 +83,14 @@ has [official TWRP](https://twrp.me/samsung/samsunggalaxya23xq.html).
    latest firmware the warning text may be missing and the screen is just
    blue. Press **Volume Up** anyway, until you see the Download mode screen
    with a barcode and the Knox status.
-3. Open Odin, put the TWRP `.tar` in the **AP** slot, and in **Options** turn
-   **Auto Reboot** off. Click **Start**.
-4. When Odin says **PASS**, hold **Volume Down + Power** until the screen goes
+3. Flash the TWRP `.tar` without rebooting:
+    - **Odin3 (Windows):** put the `.tar` in the **AP** slot, turn **Auto
+      Reboot** off in **Options**, and click **Start**.
+    - **odin4 (Linux):** `sudo odin4 -a twrp-a23xq.tar` (it does not reboot
+      unless you add `--reboot`).
+    - **Heimdall (Linux):** extract `recovery.img` from the `.tar`, then
+      `sudo heimdall flash --RECOVERY recovery.img --no-reboot`.
+4. When flashing finishes (Odin3 shows **PASS**), hold **Volume Down + Power** until the screen goes
    off, then immediately hold **Volume Up + Power** to boot straight into TWRP.
    If the phone boots to Android first, the stock recovery comes back and you
    have to repeat this step.

@@ -47,8 +47,10 @@ kernel, and often TWRP too.
 
 1. Wait until a Wonderful Kernel release supports the new firmware.
 2. Enter Download mode ([Install, step 3](install.md#3-install-twrp)) and
-   flash the new firmware with Odin. Use **HOME_CSC**, not CSC, or your data
-   is wiped.
+   flash the new firmware (BL, AP, CP and **HOME_CSC**). Use HOME_CSC, not CSC,
+   or your data is wiped.
+    - **Odin3 (Windows):** put each file in its slot and click **Start**.
+    - **odin4 (Linux):** `sudo odin4 -b BL_*.tar.md5 -a AP_*.tar.md5 -c CP_*.tar.md5 -s HOME_CSC_*.tar.md5 --reboot`
 3. Install TWRP again ([Install, step 3](install.md#3-install-twrp)) and take
    a new boot backup.
 4. Flash the matching Wonderful Kernel release.
@@ -59,5 +61,5 @@ the camera or booting.
 ## Go back to stock {: #go-back-to-stock }
 
 Restore your stock boot backup in TWRP, or flash the `boot.img` from your
-stock firmware. To also remove TWRP, flash the stock firmware with Odin
-(HOME_CSC keeps your data).
+stock firmware. To also remove TWRP, flash the stock firmware with Odin3 or
+odin4 (HOME_CSC keeps your data).
